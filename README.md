@@ -1,0 +1,1 @@
+Slot machine simulator with configurable odds and house winnings for a D&D campaign I'm in!

@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "ibll",
   "license": "ISC",
-  "description": ""
+  "description": "Slot machine simulator with configurable odds and house winnings for a D&D campaign I'm in!"
 }

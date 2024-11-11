@@ -1,4 +1,3 @@
-// Parameters
 const buyIn = 5; // Cost per play in CP
 // const payouts = [
 // 	{ minRoll: 100, payout: 30 },
@@ -43,5 +42,4 @@ function simulateEarnings(rolls) {
 	console.log(`Average Earnings per Roll: ${averageEarningsPerRoll.toFixed(2)} CP`);
 }
 
-// Run simulation
 simulateEarnings(rolls);

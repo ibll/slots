@@ -6,12 +6,15 @@ const buyIn = 5; // Cost per play in CP
 // 	{ minRoll: 20, payout: 3 }
 // ];
 const payouts = [
-	{ minRoll: 100, payout: 100 },
-	{ minRoll: 95, payout: 25 },
+	{ minRoll: 100, payout: 85 },
+	{ minRoll: 95, payout: 20 },
 	{ minRoll: 75, payout: 10 },
 	{ minRoll: 20, payout: 3 }
 ];
-const rolls = 120; // Number of simulations
+const rolls = 120 * 6; // Number of simulations
+// const rolls = 100000000; // Number of simulations
+
+const hits = {}
 
 function simulateEarnings(rolls) {
 	let totalPayouts = 0;
@@ -25,7 +28,9 @@ function simulateEarnings(rolls) {
 		for (const reward of payouts) {
 			if (roll >= reward.minRoll) {
 				payout = reward.payout;
-				break;
+				if (!hits[payout]) hits[payout] = 0;
+				hits[payout]++;
+ 				break;
 			}
 		}
 
@@ -40,6 +45,11 @@ function simulateEarnings(rolls) {
 	console.log(`Total Payouts: ${totalPayouts} CP`);
 	console.log(`Net Earnings: ${netEarnings} CP`);
 	console.log(`Average Earnings per Roll: ${averageEarningsPerRoll.toFixed(2)} CP`);
+	console.log(``)
+	console.log(`Payouts:`)
+	for (const payout in hits) {
+		console.log(`${payout} CP: ${hits[payout]}`)
+	}
 }
 
 simulateEarnings(rolls);
